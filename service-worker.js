@@ -4,8 +4,8 @@ const RESOURCES_TO_PRELOAD = [
 	'logo.svg',
 	'register-worker.js',
 	'Component.js',
-	'view/homePage.view.xml',
-	'controller/homePage.controller.js',
+	'view/loginView.view.xml',
+	'controller/loginView.controller.js',
 	'manifest.json'
 ];
 
