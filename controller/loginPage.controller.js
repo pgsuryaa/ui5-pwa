@@ -16,6 +16,8 @@ sap.ui.define([
 		if(username!=""&&password!=""){
 			this.app.username=username;
 			this.app.password=password;
+			this.getView().byId('unameId').setValue("");
+			this.getView().byId('passId').setValue("");
 			this.app.to("homeView");
 		}
 	}
