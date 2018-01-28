@@ -320,6 +320,7 @@ sap.ui.define([
 			this.app.username="";
 			this.app.password="";
 			this.app.back();
+			this.getView().byId('msgContent').destroyContent();
 		}
 
 	});
