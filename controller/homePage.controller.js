@@ -13,7 +13,6 @@ sap.ui.define([
 				accessToken: '8c2701f82f2d410dabdcd2b3106ed276'
 			});
 			var count = 0;
-
 			var commandHello = {
 				smart: true,
 				indexes: ["*"], // These spoken words will trigger the execution of the command
@@ -27,11 +26,9 @@ sap.ui.define([
 					jQuery.sap.delayedCall(500, that, function() {
 						that.scrollDown();
 					});
-
 					that.sendText(wildcard).then(function(response) {
 						var result = response.result.fulfillment.speech;
 						oMessage = new BotResponse();
-
 						if (response.result.metadata.intentName === "createNote") {
 							that.actNo = response.result.parameters.actNo;
 							that.custName = response.result.parameters.custName;
@@ -174,7 +171,11 @@ sap.ui.define([
 		onAfterRendering: function() {
 			var that = this;
 			this.app = sap.ui.getCore().byId("appId");
+			if(!this.rendered){
 			this.simulateInput("Hey. I am "+this.app.username);
+			this.rendered=true;
+			}
+			this.getView().byId('unameBtn').setText(this.app.username);
 			// this.sendText("Hey!").then(function(response){
 			// 	var oMessage= new BotResponse();
 			// 	oMessage.addContent(new sap.m.Text({
@@ -261,7 +262,6 @@ sap.ui.define([
 		prependZeroes: function(id) {
 			for (var i = id.length; i < 10; i++) {
 				id = "0" + id;
-
 			}
 			return id;
 		},
@@ -285,10 +285,7 @@ sap.ui.define([
 			if (!this._oPopover) {
 				this._oPopover = sap.ui.xmlfragment("zpwa_test.view.messageBox", this);
 				this.getView().addDependent(this._oPopover);
-				//	this._oPopover.bindElement("/ProductCollection/0");
-
 			}
-			//console.log(this._oPopover.isOpen());
 			if (!this._oPopover.isOpen()) {
 
 				var oButton = oEvent.getSource();
@@ -297,11 +294,6 @@ sap.ui.define([
 					this._oPopover.setVisible(true);
 				});
 			} else {
-				// if(this._oPopover.getVisible())
-				// this._oPopover.setVisible(false);
-				// else
-				// this._oPopover.setVisible(true);
-				//this.closeMBox();;
 				this._oPopover.close();
 			}
 
@@ -323,6 +315,11 @@ sap.ui.define([
 			// if (x > y)
 			// 	return 1;
 			// return 0;
+		},
+		onLogout:function(){
+			this.app.username="";
+			this.app.password="";
+			this.app.back();
 		}
 
 	});

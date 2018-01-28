@@ -2,7 +2,7 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" xmlns:custom="sap.ui.demo.myFiori.util">
 	<Popover
-		id="messageBar" placement="Top" showHeader="false" contentWidth="50%">
+		id="messageBar" placement="Top" showHeader="false" contentWidth="60%">
 	<content>
 		
 		<FlexBox class="messageBoxCls">

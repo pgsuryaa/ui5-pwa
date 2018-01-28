@@ -5,7 +5,6 @@ sap.ui.define([
 
 	return Controller.extend("zpwa_test.controller.loginPage", {
 	onLoginPressed:function(oEvent){
-		debugger;
 		this.app= sap.ui.getCore().byId("appId");
 		var username=this.getView().byId('unameId').getValue();
 		var password=this.getView().byId('passId').getValue();

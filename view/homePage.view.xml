@@ -2,12 +2,14 @@
 	displayBlock="true" xmlns="sap.m" xmlns:tnt="sap.tnt">
 	<App>
 		<pages>
-			<Page title="NS Assistant" id="msgContent" class="contentCls" showHeader="false">
+			<Page title="NS Assistant" id="msgContent" class="contentCls" showHeader="true">
 				<customHeader>
-					<tnt:ToolHeader>
-						<Button icon="sap-icon://menu2" type="Transparent">
-						</Button>
-					</tnt:ToolHeader>
+					<Bar id="headerBar" class="headerCls" >
+						<contentRight>
+						<Button id="unameBtn" class="noFocusCls" ></Button>
+						<Button id="logoutBtn" text="Logout" press="onLogout"></Button>
+						</contentRight>
+					</Bar>
 				</customHeader>
 				<content>
 					<!--<PullToRefresh id="pullToRefresh" refresh="handleRefresh"/>-->
