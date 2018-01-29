@@ -32,7 +32,8 @@
     color: #d9d9d9 !important;
 }
 #loginView{
-	background: url('../icons/bg_login.png');
+	background: url('../icons/bgfinal.jpg') no-repeat center;
+	background-size: 300% 100%;
 }
 .noFocusCls:focus{
 	background-color: #2f3c48;
