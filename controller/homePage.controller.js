@@ -317,10 +317,11 @@ sap.ui.define([
 			// return 0;
 		},
 		onLogout:function(){
-			this.app.username="";
-			this.app.password="";
-			this.app.back();
-			this.getView().byId('msgContent').destroyContent();
+			//this.app.username="";
+			//this.app.password="";
+			//this.app.back();
+			//this.getView().byId('msgContent').destroyContent();
+			window.location.href=window.location.href;
 		}
 
 	});
