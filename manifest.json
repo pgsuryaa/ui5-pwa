@@ -71,8 +71,8 @@
 			]
 		}
 	},
-	"name": "PWA",
-	"short_name": "PWA",
+	"name": "Fiori",
+	"short_name": "Fiori",
 	"icons": [
 		{
 			"src": "icons/icon-128x128.png",
